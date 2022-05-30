@@ -1,0 +1,29 @@
+{
+   "members": [
+      {
+         "name": "Robert",
+         "position": "CEO",
+         "pic": "member01.jpg"
+      },
+      {
+         "name": "David",
+         "position": "Vice President",
+         "pic": "member02.jpg"
+      },
+      {
+         "name": "Paul",
+         "position": "Back-End Dev",
+         "pic": "member03.jpg"
+      },
+      {
+         "name": "Peter",
+         "position": "Front-End Dev",
+         "pic": "member04.jpg"
+      },
+      {
+         "name": "Emily",
+         "position": "UI Designer",
+         "pic": "member05.jpg"
+      }
+   ]
+}

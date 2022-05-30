@@ -1,10 +1,13 @@
 $tablet: 1179px;
 $mobile: 539px;
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Sans:wght@300;400;500;600;700&family=Orbitron:wght@400;700&family=Roboto:wght@300&display=swap');
 
 @import 'common/reset';
 @import 'common/header';
 @import 'common/footer';
 @import 'common/layout';
+@import 'common/popup';
+
 @import 'main/content';
 @import 'main/visual';
 

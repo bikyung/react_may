@@ -1,6 +1,7 @@
 header {
 	width: 100%;
-	background: #222;
+	background: #fff;
+	border-bottom: 1px solid #999;
 
 	.inner {
 		width: 1180px;
@@ -15,7 +16,7 @@ header {
 
 			a {
 				font: bold 24px/1 'arial';
-				color: #fff;
+				color: #555;
 			}
 		}
 
@@ -31,30 +32,46 @@ header {
 					display: inline-block;
 					padding: 20px 30px;
 					font: bold 14px/1 'arial';
-					color: #fff;
+					color: #888;
 				}
 			}
 		}
+
 		.fa-bars {
 			position: absolute;
 			right: 30px;
 			bottom: 20px;
 			font-size: 24px;
-			color: #fff;
+			color: #888;
 			display: none;
 		}
 	}
 
 	&.main {
 		position: absolute;
-		left: 0;
-		top: 0;
+		top: 0px;
+		left: 0px;
 		z-index: 2;
 		background: transparent;
+
+		> .inner {
+			h1 {
+				color: #fff;
+			}
+
+			#gnb {
+				li a {
+					color: #fff;
+				}
+			}
+			.fa-bars {
+				color: #fff;
+			}
+		}
 	}
 }
 
-//tablet --------------------------------------------
+//tablet
 @media screen and (max-width: $tablet) {
 	header {
 		.inner {
@@ -63,11 +80,11 @@ header {
 			h1 {
 				left: 30px;
 			}
-			.fa-bars {
-				display: block;
-			}
 			#gnb {
 				display: none;
+			}
+			.fa-bars {
+				display: block;
 			}
 		}
 	}

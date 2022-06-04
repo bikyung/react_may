@@ -5,6 +5,7 @@ import Popup from '../common/Popup';
 function Youtube() {
 	const [vids, setVids] = useState([]);
 	const [open, setOpen] = useState(false);
+	const [index, setIndex] = useState(0);
 	const key = 'AIzaSyC77Pd__ju0Wqx_Umc-IuW7Cn2mWi_HVsk';
 	const playlist = 'PL92HST3Zi7rZ9Q6tfEX1v08RSk4ReQK2K';
 	const num = 5;
@@ -17,6 +18,10 @@ function Youtube() {
 		});
 	}, []);
 
+	const handlePopup = (index) => {
+		setIndex(index);
+		setOpen(true);
+	};
 	return (
 		<>
 			<Layout name={'Youtube'}>
@@ -40,7 +45,7 @@ function Youtube() {
 							<div
 								className='pic'
 								onClick={() => {
-									setOpen(true);
+									handlePopup(idx);
 								}}>
 								<img
 									src={vid.snippet.thumbnails.standard.url}
@@ -51,7 +56,13 @@ function Youtube() {
 					);
 				})}
 			</Layout>
-			{open ? <Popup setOpen={setOpen} /> : null}
+			{open && (
+				<Popup setOpen={setOpen}>
+					<iframe
+						src={`https://www.youtube.com/embed/${vids[index].snippet.resourceId.videoId}`}
+						frameBorder='0'></iframe>
+				</Popup>
+			)}
 		</>
 	);
 }

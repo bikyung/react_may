@@ -6,22 +6,25 @@ function Youtube() {
 	const [vids, setVids] = useState([]);
 	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(0);
-	const key = 'AIzaSyC77Pd__ju0Wqx_Umc-IuW7Cn2mWi_HVsk';
-	const playlist = 'PL92HST3Zi7rZ9Q6tfEX1v08RSk4ReQK2K';
-	const num = 5;
-	const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
-
-	useEffect(() => {
-		axios.get(url).then((json) => {
-			console.log(json.data.items);
-			setVids(json.data.items);
-		});
-	}, []);
 
 	const handlePopup = (index) => {
 		setIndex(index);
 		setOpen(true);
 	};
+
+	const fetchYoutube = () => {
+		const key = 'AIzaSyC77Pd__ju0Wqx_Umc-IuW7Cn2mWi_HVsk';
+		const playlist = 'PL92HST3Zi7rZ9Q6tfEX1v08RSk4ReQK2K';
+		const num = 5;
+		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
+
+		axios.get(url).then((json) => {
+			console.log(json.data.items);
+			setVids(json.data.items);
+		});
+	};
+	useEffect(fetchYoutube, []);
+
 	return (
 		<>
 			<Layout name={'Youtube'}>

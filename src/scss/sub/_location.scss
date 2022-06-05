@@ -2,4 +2,46 @@
 	figure {
 		background: lightgreen;
 	}
+	#map {
+		width: 100%;
+		height: 400px;
+		background: #111;
+	}
+
+	.btnSet {
+		margin-top: 20px;
+		display: flex;
+		justify-content: space-between;
+
+		button {
+			cursor: poniter;
+			height: 30px;
+			border: 1px solid #888;
+			padding: 5px 20px;
+			font: 14px/1 'arial';
+			color: #555;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+
+			li {
+				cursor: pointer;
+				border: 1px solid #888;
+				height: 30px;
+				padding: 5px 20px;
+				font: 14px/1 'arial';
+				color: #555;
+				margin: 0 5px;
+
+				&.on {
+					background: #555;
+					border: 1px solid #555;
+					transition: 0.5s;
+					color: #fff;
+				}
+			}
+		}
+	}
 }

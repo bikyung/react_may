@@ -48,3 +48,42 @@
 		}
 	}
 }
+
+//tablet --------------------------------------------
+
+@media screen and (max-width: $tablet) {
+	.Youtube {
+		article {
+			padding: 50px;
+			h2 {
+				width: 50%;
+			}
+			.txt {
+				width: 50%;
+				span {
+					margin-top: 20px;
+				}
+			}
+			.pic {
+				width: 100%;
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+//mobile --------------------------------------------
+
+@media screen and (max-width: $mobile) {
+	.Youtube {
+		article {
+			h2 {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			.txt {
+				width: 100%;
+			}
+		}
+	}
+}

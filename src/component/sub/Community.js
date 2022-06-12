@@ -6,6 +6,7 @@ function Community() {
 	const textarea = useRef(null);
 	const inputEdit = useRef(null);
 	const textareaEdit = useRef(null);
+	const [Allowed, setAllowed] = useState(true);
 	const dummyPosts = [
 		{ title: 'Hello5', content: 'Here comes description in detail.' },
 		{ title: 'Hello4', content: 'Here comes description in detail.' },
@@ -13,13 +14,20 @@ function Community() {
 		{ title: 'Hello2', content: 'Here comes description in detail.' },
 		{ title: 'Hello1', content: 'Here comes description in detail.' },
 	];
-	const [Posts, setPosts] = useState(dummyPosts);
+	const getLocalData = () => {
+		const data = localStorage.getItem('post');
+		return JSON.parse(data);
+	};
+
+	const [Posts, setPosts] = useState(getLocalData());
 
 	const resetPost = () => {
 		input.current.value = '';
 		textarea.current.value = '';
-		inputEdit.current.value = '';
-		textarea.current.value = '';
+		if (inputEdit.current) {
+			inputEdit.current.value = '';
+			textarea.current.value = '';
+		}
 	};
 
 	const createPost = () => {
@@ -43,7 +51,10 @@ function Community() {
 		setPosts(Posts.filter((_, idx) => idx !== index));
 	};
 
+	//게시글을 수정모드로 변경하는 함수 정의
 	const enableUpdate = (index) => {
+		if (!Allowed) return;
+		setAllowed(false);
 		setPosts(
 			Posts.map((post, idx) => {
 				if (idx === index) post.enableUpdate = true;
@@ -52,7 +63,9 @@ function Community() {
 		);
 	};
 
+	//게시글을 다시 출력모드로 변경하는 함수 정의
 	const disableUpdate = (index) => {
+		setAllowed(true);
 		setPosts(
 			Posts.map((post, idx) => {
 				if (idx === index) post.enableUpdate = false;
@@ -61,6 +74,7 @@ function Community() {
 		);
 	};
 
+	//게시글 수정 함수
 	const updatePost = (index) => {
 		if (
 			!inputEdit.current.value.trim() ||
@@ -83,7 +97,7 @@ function Community() {
 	};
 
 	useEffect(() => {
-		console.log(Posts);
+		localStorage.setItem('post', JSON.stringify(Posts));
 	}, [Posts]);
 
 	return (

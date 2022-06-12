@@ -1,8 +1,7 @@
 import Header from './component/common/Header';
 import Footer from './component/common/Footer';
 
-import Visual from './component/main/Visual';
-import Content from './component/main/Content';
+import Main from './component/main/Main';
 
 import Department from './component/sub/Department';
 import Community from './component/sub/Community';
@@ -18,11 +17,7 @@ function App() {
 	return (
 		<>
 			<Switch>
-				<Route exact path='/'>
-					<Header type={'main'} />
-					<Visual />
-					<Content />
-				</Route>
+				<Route exact path='/' component={Main} />
 
 				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>

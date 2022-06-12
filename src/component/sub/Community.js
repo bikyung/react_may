@@ -7,13 +7,6 @@ function Community() {
 	const inputEdit = useRef(null);
 	const textareaEdit = useRef(null);
 	const [Allowed, setAllowed] = useState(true);
-	const dummyPosts = [
-		{ title: 'Hello5', content: 'Here comes description in detail.' },
-		{ title: 'Hello4', content: 'Here comes description in detail.' },
-		{ title: 'Hello3', content: 'Here comes description in detail.' },
-		{ title: 'Hello2', content: 'Here comes description in detail.' },
-		{ title: 'Hello1', content: 'Here comes description in detail.' },
-	];
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		return JSON.parse(data);

@@ -8,8 +8,10 @@ $mobile: 539px;
 @import 'common/layout';
 @import 'common/popup';
 
-@import 'main/content';
+@import 'main/news';
 @import 'main/visual';
+@import 'main/pics';
+@import 'main/vids';
 
 @import 'sub/community';
 @import 'sub/department';

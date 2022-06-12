@@ -1,5 +1,90 @@
 .Community {
 	figure {
-		background: lightgoldenrodyellow;
+		background: lightsalmon;
+	}
+
+	> .inner {
+		.inputBox {
+			border: 1px solid #bbb;
+			padding: 50px;
+			margin-bottom: 50px;
+
+			input[type='text'],
+			textarea {
+				width: 50%;
+				padding: 8px 10px;
+				border: 1px solid #aaa;
+				margin-bottom: 20px;
+				resize: none;
+			}
+			.btnSet {
+				button {
+					width: 150px;
+					height: 30px;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					border: none;
+					background: #555;
+					color: #fff;
+					cursor: pointer;
+					margin-right: 20px;
+				}
+			}
+		}
+
+		.showBox {
+			border: 1px solid #bbb;
+			padding: 50px;
+
+			article {
+				background: #fff;
+				padding: 30px 40px;
+				margin-bottom: 40px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-content: center;
+
+				.txt {
+					width: 75%;
+
+					input[type='text'],
+					textarea {
+						width: 70%;
+						border: 1px solid #bbb;
+						padding: 8px 12px;
+						margin-bottom: 10px;
+						resize: none;
+					}
+				}
+				.btnSet {
+					display: flex;
+					align-items: center;
+					width: 25%;
+					justify-content: flex-end;
+
+					button {
+						margin-left: 10px;
+						border: 1px solid #bbb;
+						width: 80px;
+						height: 26px;
+						font: 11px/1 'arial';
+						color: #999;
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+						cursor: pointer;
+						transition: 0.5s;
+
+						&:hover {
+							border: 1px solid #333;
+							background: #333;
+							color: orange;
+						}
+					}
+				}
+			}
+		}
 	}
 }

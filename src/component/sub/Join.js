@@ -17,6 +17,12 @@ function Join() {
 		setVal({ ...Val, [name]: value });
 	};
 
+	const handleRadio = (e) => {
+		const { name } = e.target;
+		const isCheck = e.target.checked;
+		setVal({ ...Val, [name]: isCheck });
+	};
+
 	const check = (Val) => {
 		const errs = {};
 		const eng = /[a-zA-Z]/;
@@ -52,9 +58,7 @@ function Join() {
 		setErr(check(Val));
 	};
 
-	useEffect(() => {
-		console.log(Err);
-	}, [Err]);
+	useEffect(() => {}, [Err]);
 	return (
 		<Layout name={'Join'}>
 			<form onSubmit={handleSubmit}>
@@ -131,7 +135,27 @@ function Join() {
 									<span className='err'>{Err.email}</span>
 								</td>
 							</tr>
-
+							{/*gender*/}
+							<tr>
+								<th scope='row'>GENDER</th>
+								<td>
+									<label htmlFor='male'>Male</label>
+									<input
+										type='radio'
+										name='gender'
+										id='male'
+										onChange={handleRadio}
+									/>
+									<label htmlFor='female'>Female</label>
+									<input
+										type='radio'
+										name='gender'
+										id='female'
+										onChange={handleRadio}
+									/>
+									<span className='err'>{Err.gender}</span>
+								</td>
+							</tr>
 							<tr>
 								<th colSpan='2'>
 									<input type='reset' value='CANCEL' />
